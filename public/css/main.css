@@ -1,21 +1,35 @@
-/* line 1, /Users/mulder/projects/backbone/rails-api-backbone/source/sass/main.css.sass */
+/* line 1, /Users/pmu/projects/frontend/rails-api-backbone/source/sass/main.css.sass */
 body {
   background-color: #fafafa;
   font-family: helvetica;
 }
 
-/* line 5, /Users/mulder/projects/backbone/rails-api-backbone/source/sass/main.css.sass */
+/* line 5, /Users/pmu/projects/frontend/rails-api-backbone/source/sass/main.css.sass */
 ul, ol {
   list-style: none;
 }
 
-/* line 8, /Users/mulder/projects/backbone/rails-api-backbone/source/sass/main.css.sass */
+/* line 8, /Users/pmu/projects/frontend/rails-api-backbone/source/sass/main.css.sass */
 a {
   text-decoration: none;
   font-weight: bold;
 }
 
-/* line 12, /Users/mulder/projects/backbone/rails-api-backbone/source/sass/main.css.sass */
+/* line 13, /Users/pmu/projects/frontend/rails-api-backbone/source/sass/main.css.sass */
+header {
+  background-color: #d0d0d0;
+  border: 1px black solid;
+  width: 800px;
+  margin: 0 auto;
+  height: 80px;
+}
+/* line 19, /Users/pmu/projects/frontend/rails-api-backbone/source/sass/main.css.sass */
+header nav {
+  width: 300px;
+  display: inline;
+}
+
+/* line 23, /Users/pmu/projects/frontend/rails-api-backbone/source/sass/main.css.sass */
 #sidebar {
   background-color: white;
   border: 1px black solid;
@@ -23,7 +37,7 @@ a {
   float: left;
 }
 
-/* line 18, /Users/mulder/projects/backbone/rails-api-backbone/source/sass/main.css.sass */
+/* line 29, /Users/pmu/projects/frontend/rails-api-backbone/source/sass/main.css.sass */
 #maincontent {
   margin: 0 auto 0;
   padding: 10px;
@@ -32,12 +46,12 @@ a {
   background-color: white;
 }
 
-/* line 25, /Users/mulder/projects/backbone/rails-api-backbone/source/sass/main.css.sass */
+/* line 36, /Users/pmu/projects/frontend/rails-api-backbone/source/sass/main.css.sass */
 tr {
   border-bottom: 1px gray solid;
 }
 
-/* line 27, /Users/mulder/projects/backbone/rails-api-backbone/source/sass/main.css.sass */
+/* line 38, /Users/pmu/projects/frontend/rails-api-backbone/source/sass/main.css.sass */
 td {
   width: 100px;
 }

@@ -55,6 +55,7 @@ define([
       var ItemCollection = Backbone.Collection.extend({
         model: Item,
         url: 'items.json',
+        // url: 'data/items.json',
         parse: function(response) {
           return response;
         }
