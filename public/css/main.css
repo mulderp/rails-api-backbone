@@ -1,0 +1,43 @@
+/* line 1, /Users/mulder/projects/backbone/rails-api-backbone/source/sass/main.css.sass */
+body {
+  background-color: #fafafa;
+  font-family: helvetica;
+}
+
+/* line 5, /Users/mulder/projects/backbone/rails-api-backbone/source/sass/main.css.sass */
+ul, ol {
+  list-style: none;
+}
+
+/* line 8, /Users/mulder/projects/backbone/rails-api-backbone/source/sass/main.css.sass */
+a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* line 12, /Users/mulder/projects/backbone/rails-api-backbone/source/sass/main.css.sass */
+#sidebar {
+  background-color: white;
+  border: 1px black solid;
+  width: 200px;
+  float: left;
+}
+
+/* line 18, /Users/mulder/projects/backbone/rails-api-backbone/source/sass/main.css.sass */
+#maincontent {
+  margin: 0 auto 0;
+  padding: 10px;
+  width: 600px;
+  border: 1px black solid;
+  background-color: white;
+}
+
+/* line 25, /Users/mulder/projects/backbone/rails-api-backbone/source/sass/main.css.sass */
+tr {
+  border-bottom: 1px gray solid;
+}
+
+/* line 27, /Users/mulder/projects/backbone/rails-api-backbone/source/sass/main.css.sass */
+td {
+  width: 100px;
+}

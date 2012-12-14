@@ -1,0 +1,43 @@
+require 'rake-pipeline-web-filters'
+
+output "public"
+
+# input defines operations on a set of files. All files processed in
+# this block go into the output directory
+input "source" do
+
+  match "css/*.css" do
+    concat "css/main.css"
+  end
+
+  match "sass/*.sass" do
+    sass
+    concat "css/main.css"
+  end
+
+  match "js/**/*.js" do
+    copy
+  end
+
+  match "js/**/*.coffee" do
+	coffee_script
+    copy
+  end
+
+  match "data/**" do
+    copy
+  end
+
+  match "templates/**" do
+    copy
+  end
+
+  match "img/**" do
+    copy
+  end
+
+  match "index.html" do
+    copy
+  end
+
+end
