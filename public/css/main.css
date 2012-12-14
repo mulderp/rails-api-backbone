@@ -24,12 +24,17 @@ header {
   height: 80px;
 }
 /* line 19, /Users/pmu/projects/frontend/rails-api-backbone/source/sass/main.css.sass */
+header h1 {
+  width: 400px;
+}
+/* line 21, /Users/pmu/projects/frontend/rails-api-backbone/source/sass/main.css.sass */
 header nav {
   width: 300px;
+  float: right;
   display: inline;
 }
 
-/* line 23, /Users/pmu/projects/frontend/rails-api-backbone/source/sass/main.css.sass */
+/* line 26, /Users/pmu/projects/frontend/rails-api-backbone/source/sass/main.css.sass */
 #sidebar {
   background-color: white;
   border: 1px black solid;
@@ -37,7 +42,7 @@ header nav {
   float: left;
 }
 
-/* line 29, /Users/pmu/projects/frontend/rails-api-backbone/source/sass/main.css.sass */
+/* line 32, /Users/pmu/projects/frontend/rails-api-backbone/source/sass/main.css.sass */
 #maincontent {
   margin: 0 auto 0;
   padding: 10px;
@@ -46,12 +51,12 @@ header nav {
   background-color: white;
 }
 
-/* line 36, /Users/pmu/projects/frontend/rails-api-backbone/source/sass/main.css.sass */
+/* line 39, /Users/pmu/projects/frontend/rails-api-backbone/source/sass/main.css.sass */
 tr {
   border-bottom: 1px gray solid;
 }
 
-/* line 38, /Users/pmu/projects/frontend/rails-api-backbone/source/sass/main.css.sass */
+/* line 41, /Users/pmu/projects/frontend/rails-api-backbone/source/sass/main.css.sass */
 td {
   width: 100px;
 }
