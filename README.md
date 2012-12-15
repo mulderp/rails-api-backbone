@@ -40,4 +40,4 @@ Server-side: Start
 
 Experimental Demo
 ------------------
-  [http://rails-api-backbone.herokuapp.com/]http://rails-api-backbone.herokuapp.com/
+  http://rails-api-backbone.herokuapp.com
