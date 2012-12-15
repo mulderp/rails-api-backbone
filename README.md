@@ -37,3 +37,7 @@ Server-side: Start
 -------------------
 
     $ rails s
+
+Experimental Demo
+------------------
+  [http://rails-api-backbone.herokuapp.com/]http://rails-api-backbone.herokuapp.com/
