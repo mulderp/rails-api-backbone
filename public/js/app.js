@@ -2,12 +2,14 @@ define([
   'jquery',
   'underscore',
   'backbone',
+  'models/items',
   'text!../templates/sidebar/sidebar.html',
   'text!../templates/items/simpleItem.html',
   'text!../templates/items/addItem.html',
   'text!../templates/items/overview.html'
-  ], function($, _, Backbone, sidebarTemplate, simpleItemTemplate, addItemTemplate, overviewTemplate) {
+  ], function($, _, Backbone, Items, sidebarTemplate, simpleItemTemplate, addItemTemplate, overviewTemplate) {
 
+    console.log(Items);
     var initialize = function() {
 
       console.log("application init");
@@ -26,45 +28,14 @@ define([
 
         showMainpage: function() {
           console.log('show mainpage');
-          var sidebar = new SidebarView();
-          var items = new ItemCollection();
-          var itemsView = new OverviewView({collection: items});
-          var addItemForm = new AddItemForm({collection: items});
+          var itemsView = new OverviewView({ el: $("#maincontent")});
+          var sidebar = new SidebarView({el: $("#sidebar")});
         }
 
-      });
-
-
-      // Models
-      var Item = Backbone.Model.extend({
-        defaults: {
-          name: 'noname',
-          created_at: 'new'
-        }
-      });
-
-      var MetaItem = Backbone.Model.extend({
-        urlRoot : 'meta.json',
-        parse: function(response) {
-          console.log(response);
-          return response;
-        }
-      });
-
-      // Collection
-      var ItemCollection = Backbone.Collection.extend({
-        model: Item,
-        url: 'items.json',
-        // url: 'data/items.json',
-        parse: function(response) {
-          return response;
-        }
       });
 
 
       var SidebarView = Backbone.View.extend({
-        el: $("#sidebar"),
-        className: "sidebar",
         template: sidebarTemplate,
         render: function() {
           var tmpl = _.template(this.template);
@@ -90,52 +61,31 @@ define([
       });
 
       var OverviewView = Backbone.View.extend({
-        el: $("#maincontent"),
         template: overviewTemplate,
-        render: function() {
-          var tmpl = _.template(this.template);
-          $(this.el).empty();
-          $(this.el).append(tmpl);
-          return this;
-        },
         initialize: function() {
           console.log("init overview view ", arguments);
-          this.render();
-          var tableView = new ItemsView({el: this.el, collection: this.collection});
-          tableView.render();
-        }
-      });
-
-
-
-      // List View for all items
-      var ItemsView = Backbone.View.extend({
-        tagName: "tbody",
-
-        initialize: function () {
-          console.log('init items view');
+          this.items = new Items.ItemCollection();
+          this.items.fetch();
           var _this = this;
-          this.collection.bind("reset",function(){
+          this.items.bind("reset",function(){
             _this.render();
           });
-          this.collection.bind("add", function(event) {
+          this.items.bind("add", function(event) {
             _this.renderItem(event);
-
           });
-          this.collection.fetch();
         },
 
-        render: function () {
-          console.log('render list view');
-          console.log(this.collection);
-
+        render: function() {
+          var tmpl = _.template(this.template);
+          $(this.el).html(tmpl);
           var _this = this;
-          _.each(this.collection.models, function (item) {
+          _.each(this.items.models, function (item) {
             console.log(item);
             _this.renderItem(item);
           }, this);
+          var addItemForm = new AddItemForm();
+          return this;
         },
-
         renderItem: function (item) {
           var itemView = new ItemView({
             model: item
@@ -143,6 +93,8 @@ define([
           this.el.append(itemView.render().el);
         }
       });
+
+
 
       var AddItemForm = Backbone.View.extend({
         el: $("#maincontent"),
@@ -163,7 +115,6 @@ define([
             name: this.$("#name").val()
           });
           console.log("submit add item", this.$("#name").val());
-
         }
 
       });
