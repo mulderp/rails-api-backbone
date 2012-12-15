@@ -28,7 +28,7 @@ input "source" do
     copy
   end
 
-  match "templates/**" do
+  match "templates/**/*" do
     copy
   end
 
