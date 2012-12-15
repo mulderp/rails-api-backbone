@@ -2,10 +2,10 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'text!../templates/sidebar.html',
-  'text!../templates/simpleItem.html',
-  'text!../templates/addItem.html',
-  'text!../templates/overview.html'
+  'text!../templates/sidebar/sidebar.html',
+  'text!../templates/items/simpleItem.html',
+  'text!../templates/items/addItem.html',
+  'text!../templates/items/overview.html'
   ], function($, _, Backbone, sidebarTemplate, simpleItemTemplate, addItemTemplate, overviewTemplate) {
 
     var initialize = function() {
