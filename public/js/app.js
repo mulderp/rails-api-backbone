@@ -65,7 +65,6 @@ define([
         initialize: function() {
           console.log("init overview view ", arguments);
           this.items = new Items.ItemCollection();
-          this.items.fetch();
           var _this = this;
           this.items.bind("reset",function(){
             _this.render();
@@ -73,41 +72,44 @@ define([
           this.items.bind("add", function(event) {
             _this.renderItem(event);
           });
+          this.items.fetch();
         },
 
         render: function() {
+          console.log("#index render");
           var tmpl = _.template(this.template);
           $(this.el).html(tmpl);
+          var addItemForm = new AddItemForm({collection: this.items});
+          console.log(addItemForm.render().el);
+          $(this.el).prepend(addItemForm.render().el);
           var _this = this;
           _.each(this.items.models, function (item) {
             console.log(item);
             _this.renderItem(item);
           }, this);
-          var addItemForm = new AddItemForm();
           return this;
         },
         renderItem: function (item) {
+          console.log("#renderItem");
           var itemView = new ItemView({
             model: item
           });
-          this.el.append(itemView.render().el);
+          $(this.el).append(itemView.render().el);
         }
       });
 
 
 
       var AddItemForm = Backbone.View.extend({
-        el: $("#maincontent"),
+        tagName: 'form',
+        className: 'input-form',
         template: addItemTemplate,
-
-        render: function() {
-          $(this.el).html(_.template(this.template));
-        },
-        initialize: function() {
-          this.render();
-        },
         events: {
           "submit": "submit"
+        },
+        render: function() {
+          $(this.el).html(_.template(this.template));
+          return this;
         },
         submit: function(event) {
           event.preventDefault();
@@ -116,9 +118,7 @@ define([
           });
           console.log("submit add item", this.$("#name").val());
         }
-
       });
-
 
 
       // Initiate the router

@@ -22,8 +22,8 @@ define([
       // Collection
       var ItemCollection = Backbone.Collection.extend({
         model: Item,
-        // url: 'items.json',
-        url: 'data/items.json',
+        //url: 'items.json',
+        url: 'data/items.json', // <--- mock data
         parse: function(response) {
           return response;
         }
