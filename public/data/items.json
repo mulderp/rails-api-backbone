@@ -1,5 +1,5 @@
 [{
-	"name" : "Mister Smith",
+	"name" : "Peter",
 	"job" : "Designer",
 	"location" : "Milan (Italy)",
 	"star-badge" : false,
@@ -7,21 +7,21 @@
 },
 {
 	"img" : "/img/default_benedetta.jpg",
-	"name" : "Mister Smith",
+	"name" : "Paul",
 	"job" : "Designer",
 	"location" : "Milan (Italy)",
 	"star-badge" : false,
 	"heart" : true
 },
 {
-	"name" : "Mister Smith",
+	"name" : "Mary",
 	"job" : "Designer",
 	"location" : "Milan (Italy)",
 	"star-badge" : false,
 	"heart" : true
 },
 {
-	"name" : "Mister Smith",
+	"name" : "Joe",
 	"job" : "Designer",
 	"location" : "Milan (Italy)",
 	"star-badge" : false,
