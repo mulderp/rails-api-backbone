@@ -7,6 +7,7 @@ define([
       var Item = Backbone.Model.extend({
         defaults: {
           name: 'noname',
+          img: 'img',
           created_at: 'new'
         }
       });

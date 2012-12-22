@@ -7,6 +7,7 @@ define([
       var Item = Backbone.Model.extend({
         defaults: {
           name: 'noname',
+          img: 'img',
           created_at: 'new'
         }
       });
@@ -22,8 +23,8 @@ define([
       // Collection
       var ItemCollection = Backbone.Collection.extend({
         model: Item,
-        //url: 'items.json',
-        url: 'data/items.json', // <--- mock data
+        // url: 'items.json',
+        url: 'data/items.json',
         parse: function(response) {
           return response;
         }
