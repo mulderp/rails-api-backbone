@@ -30,10 +30,23 @@ function (_, Backbone, ItemCollection, simpleItemTemplate, overviewTemplate) {
           });
           this.collection.fetch();
         },
+        showLoader: function() {
+          console.log('show the spinner');
+          $("#spinner").show();
+        },
+
+        hideLoader: function() {
+            console.log('hide the spinner');
+            $("#spinner").hide();
+        },
 
         render: function () {
           console.log('render list view');
-          console.log(this.collection);
+          var _this = this;
+          this.$('#spinner')
+              .hide()
+              .ajaxStart(_this.showLoader)
+              .ajaxStop(_this.hideLoader);
 
           var _this = this;
           _.each(this.collection.models, function (item) {
