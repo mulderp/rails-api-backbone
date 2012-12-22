@@ -4,6 +4,7 @@ require.config({
 		jquery: 'libs/jquery/jquery',
 		underscore: 'libs/underscore/underscore',
 		backbone: 'libs/backbone/backbone',
+        spinner: 'libs/spinner',
 		text: 'libs/require/text'
 	},
 
@@ -14,7 +15,11 @@ require.config({
 		backbone: {
 			deps: ["underscore", "jquery"],
 			exports: "Backbone"
-		}
+		},
+        spinner: {
+          deps: ["jquery"],
+          exports: "Spinner"
+        }
 	}
 
 });

@@ -101,6 +101,9 @@ define([
       // Start Backbone history a necessary step for bookmarkable URL's
       Backbone.history.start();
 
+    $("#loading").spin({/* YOUR SPINNER OPTIONS */}).hide();
+    $('#loading').ajaxStart(function(){ $(this).fadeIn(); });
+    $('#loading').ajaxComplete(function(){ $(this).fadeOut(); });
 
     };
 
