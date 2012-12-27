@@ -7,9 +7,9 @@ define([
   'views/about_view',
   'views/overview_view',
   'views/show_project',
+  'views/add_item_form',
   'text!../templates/simpleItem.html',
-  'text!../templates/addItem.html'
-  ], function($, _, Backbone, Items, SidebarView, AboutView, OverviewView, ShowItemView, simpleItemTemplate, addItemTemplate, overviewTemplate) {
+  ], function($, _, Backbone, Items, SidebarView, AboutView, OverviewView, ShowItemView, AddItemForm, simpleItemTemplate, overviewTemplate) {
 
     var initialize = function() {
 
@@ -43,6 +43,10 @@ define([
           var addItemForm = new AddItemForm({collection: items});
         },
 
+        showAddImage: function() {
+          var addImageForm = new AddImageForm({collection: items});
+        },
+
         showProject: function(id) {
           console.log("*** #{id}");
           console.log(id);
@@ -67,32 +71,6 @@ define([
           return response;
         }
       });
-
-      // Item View for single item
-      var AddItemForm = Backbone.View.extend({
-        el: $("#maincontent"),
-        template: addItemTemplate,
-
-        render: function() {
-          $(this.el).html(_.template(this.template));
-        },
-        initialize: function() {
-          this.render();
-        },
-        events: {
-          "submit": "submit"
-        },
-        submit: function(event) {
-          event.preventDefault();
-          this.collection.create({
-            name: this.$("#name").val()
-          });
-
-          console.log("submit add item", this.$("#name").val());
-        }
-
-      });
-
 
 
       // Initiate the router

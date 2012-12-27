@@ -1,5 +1,6 @@
 Demo::Application.routes.draw do
   resources :items, except: :edit
+  post "upload", to: "uploads#create"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
