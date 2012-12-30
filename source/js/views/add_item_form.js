@@ -25,7 +25,12 @@ function (_, Backbone, FileUpload, ItemCollection, AddImageView, addItemTemplate
              done: function(e, data) {
           //     that.model.set({id: data.result.id});
                that.render();
-             }
+             },
+             progress: function (e, data) {
+               var progress = parseInt(data.loaded / data.total * 100, 10);
+               $("#progressbar").progressbar({value: progress});
+               console.log(progress);
+              }
            });
         },
         initialize: function() {

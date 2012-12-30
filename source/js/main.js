@@ -2,6 +2,7 @@ require.config({
 
 	paths: {
 		jquery: 'libs/jquery/jquery',
+        'jquery-ui': 'libs/jquery-ui/jquery-ui',
         'jquery.ui.widget': 'libs/jQuery-File-Upload/js/vendor/jquery.ui.widget',
 		underscore: 'libs/underscore/underscore',
 		backbone: 'libs/backbone/backbone',
@@ -18,7 +19,7 @@ require.config({
 			exports: "Backbone"
         },
         fileupload: {
-          deps: ["jquery"],
+          deps: ["jquery", "jquery-ui"],
           exports: "FileUpload"
         }
 	}
